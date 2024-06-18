@@ -1,3 +1,21 @@
+<template>
+  <div>
+    <div
+      class="flex h-80 w-80 cursor-pointer items-center justify-center rounded border border-dashed border-zinc-200 bg-zinc-100"
+      @click="load"
+    >
+      <p class="text-center text-sm text-zinc-400">Upload your picture</p>
+    </div>
+    <input
+      ref="fileInput"
+      type="file"
+      class="hidden"
+      :accept="accept"
+      @input="onInput"
+    />
+  </div>
+</template>
+
 <script setup lang="ts">
 withDefaults(
   defineProps<{
@@ -32,21 +50,3 @@ defineExpose({
   load,
 })
 </script>
-
-<template>
-  <div>
-    <div
-      class="flex h-80 w-80 cursor-pointer items-center justify-center rounded border border-dashed border-zinc-200 bg-zinc-100"
-      @click="load"
-    >
-      <p class="text-center text-sm text-zinc-400">Upload your picture</p>
-    </div>
-    <input
-      ref="fileInput"
-      type="file"
-      class="hidden"
-      :accept="accept"
-      @input="onInput"
-    />
-  </div>
-</template>

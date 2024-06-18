@@ -26,7 +26,7 @@ export const diffusionModels: Record<string, DiffusionModel> = {
     label: 'Zelda',
     tag: 'bf412da351d41547f117391eff2824ab0301b6ba1c6c010c4b5f766a492d62fc',
     picture: '/models/zelda.png',
-    promptSuffix: ' (Zelda), breath of the wild',
+    promptSuffix: '(Zelda), breath of the wild',
   },
 
   gta: {
@@ -34,7 +34,7 @@ export const diffusionModels: Record<string, DiffusionModel> = {
     label: 'GTA',
     tag: 'b61a50b07f8316aab4a10253692511dd2f0b6f8546113c314a0e0940dc372614',
     picture: '/models/gta.png',
-    promptSuffix: ' (GTA), Grand Theft Auto',
+    promptSuffix: '(GTA), Grand Theft Auto',
   },
 
   tron: {
@@ -42,7 +42,7 @@ export const diffusionModels: Record<string, DiffusionModel> = {
     label: 'Tron',
     tag: 'fd920825e12db2a942f8a9cac40ad4f624a34a06faba3ac1b44a5305df8c6e2d',
     picture: '/models/tron.png',
-    promptSuffix: ' (Tron), TRN',
+    promptSuffix: '(Tron), TRN',
   },
 
   barbie: {

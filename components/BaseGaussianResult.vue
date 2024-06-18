@@ -1,3 +1,10 @@
+<template>
+  <div
+    ref="container"
+    class="overflow-hidden rounded bg-zinc-100"
+  />
+</template>
+
 <script setup lang="ts">
 import * as THREE from 'three'
 // @ts-ignore
@@ -155,10 +162,3 @@ onMounted(async () => {
   animate()
 })
 </script>
-
-<template>
-  <div
-    ref="container"
-    class="overflow-hidden rounded bg-zinc-100"
-  />
-</template>

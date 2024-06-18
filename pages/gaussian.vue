@@ -1,3 +1,29 @@
+<template>
+  <div class="flex flex-col items-center overflow-visible py-4">
+    <BasePrompt
+      v-model="prompt"
+      class="mt-8 w-full max-w-md"
+      :loading="loading"
+      @generate="generate"
+    />
+
+    <div class="my-1 text-sm">
+      <p
+        v-if="error"
+        class="text-red-500"
+      >
+        {{ error }}
+      </p>
+      <p v-else>&nbsp;</p>
+    </div>
+
+    <BaseGaussianResult
+      class="mt-2 h-96 w-full max-w-md overflow-hidden rounded bg-zinc-100"
+      :output="output"
+    />
+  </div>
+</template>
+
 <script setup lang="ts">
 const prompt = ref()
 const loading = ref(false)
@@ -41,29 +67,3 @@ async function generate() {
   loading.value = false
 }
 </script>
-
-<template>
-  <div class="flex flex-col items-center overflow-visible py-4">
-    <BasePrompt
-      v-model="prompt"
-      class="mt-8 w-full max-w-md"
-      :loading="loading"
-      @generate="generate"
-    />
-
-    <div class="my-1 text-sm">
-      <p
-        v-if="error"
-        class="text-red-500"
-      >
-        {{ error }}
-      </p>
-      <p v-else>&nbsp;</p>
-    </div>
-
-    <BaseGaussianResult
-      class="mt-2 h-96 w-full max-w-md overflow-hidden rounded bg-zinc-100"
-      :output="output"
-    />
-  </div>
-</template>

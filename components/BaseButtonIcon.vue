@@ -1,11 +1,3 @@
-<script setup lang="ts">
-defineProps<{
-  icon: string
-  active?: boolean
-  disabled?: boolean
-}>()
-</script>
-
 <template>
   <button
     class="flex items-center justify-center rounded p-1 transition disabled:cursor-not-allowed disabled:opacity-50"
@@ -21,3 +13,11 @@ defineProps<{
     />
   </button>
 </template>
+
+<script setup lang="ts">
+defineProps<{
+  icon: string
+  active?: boolean
+  disabled?: boolean
+}>()
+</script>

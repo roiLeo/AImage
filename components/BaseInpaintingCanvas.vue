@@ -1,3 +1,10 @@
+<template>
+  <canvas
+    id="canvas"
+    class="rounded"
+  />
+</template>
+
 <script setup lang="ts">
 import { Canvas, PencilBrush, Image, Path } from 'fabric'
 
@@ -141,10 +148,3 @@ defineExpose({
   }),
 })
 </script>
-
-<template>
-  <canvas
-    id="canvas"
-    class="rounded"
-  />
-</template>

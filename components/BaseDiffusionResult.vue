@@ -1,39 +1,3 @@
-<script setup lang="ts">
-import type { Status } from 'replicate'
-const props = defineProps<{
-  status: Status
-  image?: string
-  mask?: string
-  output?: string
-  height: number
-  width: number
-}>()
-
-const imageLoaded = ref(false)
-const hovered = ref(false)
-
-const onLoad = async () => {
-  imageLoaded.value = true
-}
-
-async function download() {
-  if (!props.output) return
-
-  const a = document.createElement('a')
-  const blob = await fetch(props.output).then((res) => res.blob())
-  a.href = URL.createObjectURL(blob) ?? ''
-  a.download = 'image.png'
-
-  a.click()
-  a.remove()
-}
-
-const aspectRatio = computed(() => props.width / props.height)
-const placeholderPaddingTop = computed(
-  () => Math.round(100 * (1 / aspectRatio.value)) + '%',
-)
-</script>
-
 <template>
   <div
     class="relative w-full overflow-hidden rounded shadow-xl"
@@ -87,3 +51,40 @@ const placeholderPaddingTop = computed(
     </Transition>
   </div>
 </template>
+
+<script setup lang="ts">
+import type { Status } from 'replicate'
+
+const props = defineProps<{
+  status: Status
+  image?: string
+  mask?: string
+  output?: string
+  height: number
+  width: number
+}>()
+
+const imageLoaded = ref(false)
+const hovered = ref(false)
+
+const onLoad = async () => {
+  imageLoaded.value = true
+}
+
+async function download() {
+  if (!props.output) return
+
+  const a = document.createElement('a')
+  const blob = await fetch(props.output).then((res) => res.blob())
+  a.href = URL.createObjectURL(blob) ?? ''
+  a.download = 'image.png'
+
+  a.click()
+  a.remove()
+}
+
+const aspectRatio = computed(() => props.width / props.height)
+const placeholderPaddingTop = computed(
+  () => Math.round(100 * (1 / aspectRatio.value)) + '%',
+)
+</script>

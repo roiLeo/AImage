@@ -1,14 +1,11 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  ssr: false,
   devtools: { enabled: true },
   modules: [
-    '@nuxtjs/tailwindcss',
-    'nuxt-icon',
+    '@nuxt/ui',
     ['@pinia/nuxt', { autoImports: ['defineStore', 'acceptHMRUpdate'] }],
     '@pinia-plugin-persistedstate/nuxt',
-    '@nuxt/image',
     '@vueuse/nuxt',
+    '@nuxt/image',
   ],
 
   imports: {
@@ -26,5 +23,10 @@ export default defineNuxtConfig({
     head: {
       link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }],
     },
+  },
+  ui: { global: true },
+  colorMode: {
+    preference: 'dark',
+    classSuffix: '',
   },
 })
