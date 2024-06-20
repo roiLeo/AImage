@@ -44,7 +44,7 @@
           />
           <div>
             <p class="text-sm font-medium text-zinc-900">{{ model?.label }}</p>
-            <p class="text-sm font-medium text-zinc-500">{{ model?.name }}</p>
+            <p class="text-xs font-medium text-zinc-500">{{ model?.name }}</p>
           </div>
         </div>
       </div>
