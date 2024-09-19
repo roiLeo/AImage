@@ -1,5 +1,12 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
+  app: {
+    head: {
+      link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }],
+    },
+  },
+
   modules: [
     '@nuxt/ui',
     ['@pinia/nuxt', { autoImports: ['defineStore', 'acceptHMRUpdate'] }],
@@ -12,22 +19,29 @@ export default defineNuxtConfig({
   imports: {
     dirs: ['stores/**', 'helpers/**'],
   },
+
   build: {
     transpile: ['trpc-nuxt'],
   },
 
-  runtimeConfig: {
-    replicateApiToken: process.env.REPLICATE_API_TOKEN,
-  },
-
-  app: {
-    head: {
-      link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }],
-    },
-  },
   ui: { global: true },
+
   colorMode: {
     preference: 'dark',
     classSuffix: '',
+  },
+
+  fonts: {
+    families: [
+      {
+        name: 'Akira',
+        provider: 'local',
+        weights: ['700'],
+      },
+    ],
+  },
+
+  runtimeConfig: {
+    replicateApiToken: process.env.REPLICATE_API_TOKEN,
   },
 })
