@@ -2,9 +2,6 @@ export default defineAppConfig({
   ui: {
     primary: 'pink',
     gray: 'neutral',
-    icons: {
-      dynamic: true,
-    },
     button: {
       default: {
         size: 'lg',

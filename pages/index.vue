@@ -73,7 +73,7 @@
 
     <UAlert
       v-if="error"
-      class="my-2"
+      class="mx-auto mb-6 mt-10 w-full max-w-md"
       icon="i-heroicons-exclamation-circle"
       color="red"
       variant="subtle"

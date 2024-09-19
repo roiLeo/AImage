@@ -7,14 +7,16 @@
       aria-label="Global"
     >
       <div class="flex items-center justify-between">
-        <!-- Brand -->
         <NuxtLink
           to="/"
-          class="inline-block flex-none rounded-md font-akira text-xl font-semibold focus:opacity-80 focus:outline-none"
+          class="flex items-center gap-2 font-akira text-xl font-semibold"
         >
+          <UIcon
+            name="i-hugeicons-ai-brain-03"
+            class="h-5 w-5"
+          />
           AImage
         </NuxtLink>
-        <!-- End Brand -->
 
         <div class="space-x-2 py-4 md:hidden">
           <ColorModeButton />
@@ -22,13 +24,6 @@
             color="primary"
             variant="outline"
             icon="i-simple-icons-github"
-          />
-          <UButton
-            class="hidden"
-            icon="i-heroicons-bars-3"
-            color="gray"
-            variant="ghost"
-            aria-label="Toggle Navbar"
           />
         </div>
       </div>

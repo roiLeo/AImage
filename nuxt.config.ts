@@ -17,7 +17,7 @@ export default defineNuxtConfig({
   ],
 
   imports: {
-    dirs: ['helpers/**'],
+    dirs: ['stores/**', 'helpers/**'],
   },
 
   build: {
@@ -43,4 +43,6 @@ export default defineNuxtConfig({
   runtimeConfig: {
     replicateApiToken: process.env.REPLICATE_API_TOKEN,
   },
+
+  compatibilityDate: '2024-09-19',
 })
