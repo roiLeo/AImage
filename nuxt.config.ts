@@ -17,7 +17,7 @@ export default defineNuxtConfig({
   ],
 
   imports: {
-    dirs: ['stores/**', 'helpers/**'],
+    dirs: ['helpers/**'],
   },
 
   build: {
@@ -36,7 +36,6 @@ export default defineNuxtConfig({
       {
         name: 'Akira',
         provider: 'local',
-        weights: ['700'],
       },
     ],
   },

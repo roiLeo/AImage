@@ -1,9 +1,21 @@
 <template>
   <div class="flex flex-col items-center overflow-visible py-4">
+    <div class="flex h-full flex-col justify-center">
+      <div class="mx-auto w-full max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+        <h1 class="text-primary font-akira text-5xl font-bold md:text-6xl">
+          AImage
+        </h1>
+        <p class="mt-5 text-lg text-gray-600 dark:text-neutral-400">
+          Your AI-powered image generator for the web, transforming ideas into
+          reality
+        </p>
+      </div>
+    </div>
+
     <BaseInputModelSelect
       v-model="model"
       :options="diffusionModels"
-      class="mb-6"
+      class="my-6"
     />
 
     <Transition mode="out-in">
@@ -51,19 +63,6 @@
         />
       </div>
     </div> -->
-
-    <div class="flex h-full flex-col justify-center">
-      <div class="mx-auto w-full max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-        <h1
-          class="text-3xl font-bold text-gray-800 dark:text-white sm:text-4xl"
-        >
-          Welcome to AImage
-        </h1>
-        <p class="mt-3 text-gray-600 dark:text-neutral-400">
-          Your AI-powered image generator for the web
-        </p>
-      </div>
-    </div>
 
     <BasePrompt
       v-model="prompt"
