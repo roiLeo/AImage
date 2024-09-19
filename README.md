@@ -5,16 +5,13 @@ A web interface powered by [Replicate](https://replicate.com/) to generate and e
 <details>
   <summary>Screenshot</summary>
   
+  ![Screenshot 2024-09-19 at 10-35-13 AImage](https://github.com/user-attachments/assets/63ffa9d8-ec69-46e7-b5d6-c481c57771aa)
 
 </details>
 
 ## Features
 
-- Beautiful page for your npm package
-- Downloads chart to png or svg
-- Metrics are cached for maximum performance
-- Running on the Edge with [NuxtHub](https://hub.nuxt.com)
-- Using [npm-stat.com](https://npm-stat.com) API
+- Generate Image using AI prompt
 
 ## Tech Stack
 
