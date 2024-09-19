@@ -24,6 +24,8 @@
             color="primary"
             variant="outline"
             icon="i-simple-icons-github"
+            to="https://github.com/roiLeo/AImage"
+            target="_blank"
           />
         </div>
       </div>
@@ -43,6 +45,8 @@
               variant="outline"
               icon="i-simple-icons-github"
               label="Github"
+              to="https://github.com/roiLeo/AImage"
+              target="_blank"
             />
           </div>
         </div>
