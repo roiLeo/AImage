@@ -1,6 +1,10 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
+  future: {
+    compatibilityVersion: 4,
+  },
+
   app: {
     head: {
       link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }],

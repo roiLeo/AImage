@@ -1,7 +1,7 @@
-import { replicate } from '@/server/replicate'
 import { z } from 'zod'
-import { publicProcedure, router } from '../trpc'
-import { diffusionModels } from '@/server/models'
+import { publicProcedure, router } from '~~/server/trpc/trpc'
+import { diffusionModels } from '~~/server/models'
+import { replicate } from '~~/server/replicate'
 
 const generateInput = z.object({
   prompt: z.string().nullish(),

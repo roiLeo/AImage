@@ -1,4 +1,4 @@
-import { replicate } from '@/server/replicate'
+import { replicate } from '~~/server/replicate'
 import { z } from 'zod'
 import { publicProcedure, router } from '../trpc'
 

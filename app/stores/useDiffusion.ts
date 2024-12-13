@@ -1,32 +1,39 @@
-import type { RouterInput, RouterOutput } from '@/server/trpc/routers'
+import type { RouterInput } from '~~/server/trpc/routers'
 import type { Prediction } from 'replicate'
 
-export type GaussianTask = Prediction & {
-  input: { prompt: string }
+export type DiffusionTask = Prediction & {
+  input: {
+    prompt: string
+    image: string
+    mask: string
+    width: number
+    height: number
+  }
   output: string[]
 }
 
-type GaussianState = {
-  history: RouterOutput['gaussian']['generate'][]
+type DiffusionState = {
+  history: DiffusionTask[]
 }
 
-export const useGaussian = defineStore('gaussian', {
+export const useDiffusion = defineStore('diffusion', {
   persist: {
     storage: persistedState.localStorage,
   },
 
-  state: () => ({ history: [] }) as GaussianState,
+  state: () => ({ history: [] }) as DiffusionState,
 
   actions: {
-    async generate(input: RouterInput['gaussian']['generate']) {
+    async generate(input: RouterInput['diffusion']['generate']) {
       const { $client } = useNuxtApp()
 
-      const generateTask = await $client.gaussian.generate.mutate(input)
-      this.history.unshift(generateTask as GaussianTask)
+      const generateTask = await $client.diffusion.generate.mutate(input)
+      this.history.unshift(generateTask as DiffusionTask)
 
       try {
         const task = await awaitTaskResult(generateTask)
-        return task
+        const index = this.history.findIndex((t) => t.id === generateTask.id)
+        this.history[index] = task as DiffusionTask
       } catch (e) {
         this.history = this.history.filter((t) => t.id !== generateTask.id)
         throw e
@@ -47,7 +54,7 @@ export const useGaussian = defineStore('gaussian', {
           try {
             const _task = await awaitTaskResult(task)
             const index = this.history.findIndex((t) => t.id === task.id)
-            this.history[index] = _task
+            this.history[index] = _task as DiffusionTask
           } catch (e) {
             this.history = this.history.filter((t) => t.id !== task.id)
             throw e
