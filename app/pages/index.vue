@@ -103,7 +103,7 @@
 </template>
 
 <script setup lang="ts">
-import { diffusionModels } from '@/server/models'
+import { diffusionModels } from '~~/server/models'
 import MiniMasonry from 'minimasonry'
 
 const diffusionStore = useDiffusion()
